@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  <title>Zero Bench Time - Today's Listing</title>
+  <style>
+    .page {
+      width: 320px !important;
+    }
+    .wrap {
+      padding: 50px 20px !important;
+    }
+
+    .row {
+      border-radius: 6px !important;
+      border: solid 1px #f4f4f4 !important;
+      background-color: #ffffff !important;
+      margin-bottom: 10px !important;
+       width: 100% !important;
+      display: block !important;
+      box-sizing: border-box !important;
+      padding: 0px 15px;
+    }
+
+    .col {
+      text-align: left !important;
+      padding: 10px 7px !important;
+      box-sizing: border-box !important;
+      display: block !important;
+    }
+
+    .d-block {
+      display: block !important;
+    }
+    .hr-line {
+      margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .page {
+        width: 940px !important;
+      }
+      .wrap {
+        padding: 50px 60px !important;
+      }
+
+      .row {
+        display: table !important;
+        min-height: 110px !important;
+        align-items: center !important;
+      }
+
+      .col {
+        padding: 20px 15px !important;
+        display: table-cell !important;
+      }
+
+      .col-1, .col-2 {
+        width: 34% !important;
+      }
+      .col-3 {
+        width: 30% !important;
+        text-align: center !important;
+        align-self: center;
+      }
+
+      .btn {
+        width: 140px !important;
+      }
+      .posted-on {
+        display: block;
+        padding-left: 15px;
+      }
+      .hr-line {
+        margin-top: 0px;
+      }
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #fbfbfb; font-family: arial, sans-serif;">
+  <div class="page" style="width: 100%; max-width: 940px; margin: auto; padding: 10px 0">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 15px; margin-top: 12px; width: 100%; table-layout: fixed;">
+          <tr>
+            <td style="text-align: center;">
+              <img src="https://drive.google.com/uc?id=1glJskRh377ns11muSy-sdPBOii9i6l7o" width="160" alt="ZeroBenchTime" title="ZeroBenchTime">
+            </td>
+          </tr>
+        </table>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%"
+          style="border-radius: 6px; background-color: white; text-align: center; width: 100%; table-layout: fixed;">
+          <tr>
+            <td style="padding: 14px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px; ">
+                <tr>
+                  <td>
+                    <h1 style="font-family: arial, sans-serif;
+                      font-size: 40px;
+                      font-weight: 700;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.15;
+                      letter-spacing: normal;
+                      margin: 20px 0 15px;
+                      text-align: center;
+                      mso-line-height-rule:exactly;">Today’s Listings</h1>
+                    <p style="
+                      font-family: arial, sans-serif;
+                      font-size: 16px;
+                      font-weight: 500;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.38;
+                      letter-spacing: normal;
+                      color: #bababa;
+                      margin: 0 0 30px;
+                      text-align: center;">
+                      Here are your Zero Bench Time listings for <br />
+                      <span style="color: #2b97f7; text-decoration: none;">{{date}}</span>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <table class="d-block" style="margin-bottom:40px">
+                <tbody class="d-block">
+                  {{#listings}}
+                  <tr class="row">
+                    <td>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="col col-1" style="vertical-align: middle;">
+                              <h4 style="margin:0;color:#4d4d4d;font-size:18px;margin-bottom:8px;font-weight:bold;mso-line-height-rule:exactly;">{{seniority.value}} {{title}}</h4>
+                              <p style="margin:0;color:#4d4d4d;font-size:16px">{{skills}}</p>
+                            </td>
+                            <td class="col col-2" style="vertical-align: middle;">
+                              <h4 style="margin:0;color:#4d4d4d;font-size:18px;margin-bottom:8px;font-weight:bold;mso-line-height-rule:exactly;">
+                                {{contractType}} {{#hourlyRate}}- ${{.}}/hr{{/hourlyRate}}
+                                {{#isProBono}}pro bono{{/isProBono}}
+                              </h4>
+                              <p style="margin:0;color:#4d4d4d;font-size:16px">{{availability}} / {{city.name}}</p>
+                            </td>
+                            <td class="col col-3" cellpadding="5" style="vertical-align: middle;padding: 0 !important">
+                              <a href="https://www.zerobenchtime.com/messages/detail/new/{{id}}" class="btn"
+                                style="padding:14px 5px;box-sizing:border-box;border-radius:6px;color:white;background-color:#2b97f7;display:inline-block;text-decoration:none;text-align: center;font-family:arial,sans-serif;width:100%;font-size:16px"
+                                target="_blank">Contact and hire</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="3">
+                               <div class="posted-on" style="margin:0;color:#bababa;text-align:left;">
+                                <small>{{createdAt}}</small>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  {{/listings}}
+                </tbody>
+              </table>
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td>
+                    <p style="
+                      font-family: arial, sans-serif;
+                      font-size: 16px;
+                      font-weight: 500;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.38;
+                      letter-spacing: normal;
+                      color: #bababa;
+                      margin: 0 0 10px;
+                      text-align: center;">
+                      Do you have an available consultant? List him through
+                      <a href="https://www.zerobenchtime.com/listing/new" style="color: #2b97f7; text-decoration: none;">here!</a>
+                    </p>
+                    <p style="
+                      font-family: arial, sans-serif;
+                      font-size: 16px;
+                      font-weight: 500;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.38;
+                      letter-spacing: normal;
+                      color: #bababa;
+                      margin: 0 0 10px;
+                      text-align: center;">
+                      If you want to unsubscribe from the list, click
+                      <a href="https://www.zerobenchtime.com/settings" style="color: #2b97f7; text-decoration: none;">here!</a>
+                    </p>
+                    <p style="
+                      font-family: arial, sans-serif;
+                      font-size: 16px;
+                      font-weight: 500;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.38;
+                      letter-spacing: normal;
+                      color: #bababa;
+                      margin: 0 0 30px;
+                      text-align: center;">
+                      Thanks, <br />
+                      The ZeroBenchTime Team
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+  </div>
+</body>
+
+</html>

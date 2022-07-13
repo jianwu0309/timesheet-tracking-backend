@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ZeroBenchTime - New Message</title>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #fbfbfb; font-family: arial, sans-serif;">
+  <div style="width: 620px; margin: auto; padding: 10px 0">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 15px; margin-top: 12px; width: 100%; table-layout: fixed;">
+      <tr>
+        <td style="text-align: center;">
+          <img src="https://drive.google.com/uc?id=1glJskRh377ns11muSy-sdPBOii9i6l7o" width="160" alt="ZeroBenchTime" title="ZeroBenchTime">
+        </td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-radius: 6px;
+      border: solid 1px #f4f4f4;
+      background-color: #ffffff;
+      margin-bottom: 10px;">
+      <tbody>
+        <tr>
+          <td colspan="2">
+            <h1 style="font-family: arial, sans-serif;
+              font-size: 40px;
+              font-weight: 700;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.15;
+              letter-spacing: normal;
+              margin: 20px 0 15px;
+              color: #1c222a;
+              text-align: center;">Contact</h1>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left; padding: 30px 40px;">
+            <h4 style="margin: 0;
+              color: #4d4d4d;
+              font-size: 18px;
+              margin-bottom: 8px;
+              font-weight: bold;">{{name}}</h4>
+            <p style="margin: 0;
+              color: #4d4d4d;
+              font-size: 16px;">{{email}}</p>
+          </td>
+          <td style="text-align: left; padding: 30px 40px;">
+            <h4 style="margin: 0;
+              color: #4d4d4d;
+              font-size: 18px;
+              margin-bottom: 8px;
+              font-weight: bold;">{{subject}}</h4>
+            <p style="margin: 0;
+              color: #4d4d4d;
+              font-size: 16px;">{{phone}}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+      style="border-radius: 6px; background-color: white; text-align: center;">
+      <tr>
+        <td style="padding: 30px;">
+          <p style="
+            font-family: arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 30px 35px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: #1c222a;
+            margin: 0 0 30px;
+            background-color: #fbfbfb;
+            text-align: left;">{{message}}</p>
+        <br/>
+          <p style="
+            font-family: arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.38;
+            letter-spacing: normal;
+            color: #bababa;
+            margin: 0 0 30px;
+            text-align: center;">
+            Thanks, <br />
+            The ZeroBenchTime Team
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
