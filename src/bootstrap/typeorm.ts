@@ -38,7 +38,7 @@ class DatabaseLogger implements Logger {
 export const bootstrapDatabase = async (): Promise<any> => {
   let entities = ['src/entities/**/*.ts'];
   if (config.env !== 'local') {
-    entities = ['src/entities/**/*.js'];
+    entities = ['dist/src/entities/**/*.js'];
   }
   const connectionOptions: ConnectionOptions = {
     type: 'postgres',
@@ -46,7 +46,6 @@ export const bootstrapDatabase = async (): Promise<any> => {
     ssl: true,
     extra: {
       ssl: {require: true, rejectUnauthorized: false},
-
     },
     ...config.database,
   };

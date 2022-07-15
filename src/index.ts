@@ -30,6 +30,8 @@ const limiter = rateLimit.RateLimit.middleware({
 const whitelist = [
   'http://localhost:4200',
   'http://localhost:3000',
+  'https://timesheet-track.herokuapp.com/',
+  'http://timesheet-track.herokuapp.com/'
 ];
 
 function checkOriginAgainstWhitelist(ctx: Koa.Context) {
