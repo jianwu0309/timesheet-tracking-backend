@@ -8,6 +8,8 @@ const router = new Router({
 
 router.get('/', ctrl.getRecords);
 
+router.get('/stats', ctrl.getRecordsForChart);
+
 router.post('/', ctrl.saveRecord);
 
 router.delete('/:id', ctrl.deleteRecord);

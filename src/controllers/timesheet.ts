@@ -6,6 +6,11 @@ export const getRecords = async (ctx: Context, next: () => void) => {
     await next();
 };
 
+export const getRecordsForChart = async (ctx: Context, next: () => void) => {
+    ctx.state.data = await timesheetService.getRecordsForChart();
+    await next();
+};
+
 export const saveRecord = async (ctx: Context, next: () => void) => {
     const payload = ctx.request.body;
     ctx.state.data = await timesheetService.saveRecord(payload);

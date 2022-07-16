@@ -8,6 +8,13 @@ export const getRecords = async () => {
     return timesheetRepo.getRecords();
 };
 
+export const getRecordsForChart = async () => {
+    console.log('in charts ==============');
+    const stats = await timesheetRepo.getRecordsForChart();
+    console.log('stats ==============', stats);
+    return stats;
+};
+
 export const saveRecord = async (payload: ISaveRecord) => {
     await validate(payload, joiSchema.saveRecord);
     if (payload.id) {

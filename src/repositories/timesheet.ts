@@ -21,6 +21,20 @@ export const getRecordById = async (id: number) => {
     });
 };
 
+export const getRecordsForChart = async () => {
+    return getRepository(Timesheet).query(`
+        select
+            "timesheet"."agencyTime" as "time",
+            count("timesheet"."agencyTime") as "count"
+        from
+            "timesheet" "timesheet"
+        where
+            "timesheet"."isActive" = true
+        group by
+            timesheet."agencyTime";
+    `);
+};
+
 export const saveRecord = async (payload: any) => {
     return getRepository(Timesheet).save(payload);
 };
