@@ -43,6 +43,12 @@ export class Timesheet extends AuditColumn {
   public agencyTimezone: string;
 
   @Column({
+    type: 'character varying',
+    length: 100
+  })
+  public country: string;
+
+  @Column({
     type: 'boolean',
     default: true,
   })
