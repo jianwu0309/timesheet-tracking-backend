@@ -2,7 +2,11 @@ import { Context } from 'koa';
 import * as timesheetService from '../services/timesheet';
 
 export const getRecords = async (ctx: Context, next: () => void) => {
-    ctx.state.data = await timesheetService.getRecords();
+    const pagination: any = {
+        limit: ctx.request.query.limit || 20,
+        offset: ctx.request.query.offset || 0,
+    }
+    ctx.state.data = await timesheetService.getRecords(pagination);
     await next();
 };
 

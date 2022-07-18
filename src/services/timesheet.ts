@@ -1,17 +1,16 @@
 import * as boom from '@hapi/boom';
-import { ISaveRecord } from '../interfaces/timesheet';
+import { IGetRecords, ISaveRecord } from '../interfaces/timesheet';
 import * as timesheetRepo from '../repositories/timesheet';
 import * as joiSchema from '../validations/schemas/timesheet';
 import { validate } from './../validations/index';
 
-export const getRecords = async () => {
-    return timesheetRepo.getRecords();
+export const getRecords = async (pagination: IGetRecords) => {
+    const result = await timesheetRepo.getRecords(pagination);
+    return { total: result[1], records: result[0] };
 };
 
 export const getRecordsForChart = async () => {
-    console.log('in charts ==============');
     const stats = await timesheetRepo.getRecordsForChart();
-    console.log('stats ==============', stats);
     return stats;
 };
 

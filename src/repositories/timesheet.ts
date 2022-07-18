@@ -1,14 +1,17 @@
 import { getRepository } from 'typeorm';
 import { Timesheet } from '../entities/timesheet';
+import { IGetRecords } from '../interfaces/timesheet';
 
-export const getRecords = async () => {
-    return getRepository(Timesheet).find({
+export const getRecords = async (pagination: IGetRecords) => {
+    return getRepository(Timesheet).findAndCount({
         where: {
             isActive: true
         },
         order: {
             createdAt: 'DESC'
-        }
+        },
+        skip: pagination.offset,
+        take: pagination.limit
     });
 };
 

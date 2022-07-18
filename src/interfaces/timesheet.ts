@@ -7,3 +7,8 @@ export interface ISaveRecord {
     agencyTime: string;
     agencyTimezone: string;
 }
+
+export interface IGetRecords {
+    limit: number;
+    offset: number;
+}
