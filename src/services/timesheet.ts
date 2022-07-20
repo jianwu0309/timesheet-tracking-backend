@@ -9,8 +9,8 @@ export const getRecords = async (pagination: IGetRecords) => {
     return { total: result[1], records: result[0] };
 };
 
-export const getRecordsForChart = async () => {
-    const stats = await timesheetRepo.getRecordsForChart();
+export const getRecordsForChart = async (countries: string[]) => {
+    const stats = await timesheetRepo.getRecordsForChart(countries);
     return stats;
 };
 

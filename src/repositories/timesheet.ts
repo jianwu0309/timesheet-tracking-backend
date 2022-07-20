@@ -24,7 +24,7 @@ export const getRecordById = async (id: number) => {
     });
 };
 
-export const getRecordsForChart = async () => {
+export const getRecordsForChart = async (countries: string[]) => {
     return getRepository(Timesheet).query(`
         select
             "timesheet"."agencyTime" as "time",
@@ -33,6 +33,7 @@ export const getRecordsForChart = async () => {
             "timesheet" "timesheet"
         where
             "timesheet"."isActive" = true
+            ${countries.length ? `and "timesheet".country in (${countries.map((country) => `'${country}'`).join(',')})` : ''}
         group by
             timesheet."agencyTime";
     `);
