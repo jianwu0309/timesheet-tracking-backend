@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, JoinColumn, ManyToOne, Column, OneToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { AuditColumn } from './audit-column';
 
 @Entity('users')
