@@ -56,7 +56,6 @@ const generateTokenAndAuthResponse = (user: User) => {
       id: user.id,
       email: user.email,
       createdAt: user.createdAt,
-      isAdmin: user.isAdmin,
       isEmailVerified: user.isEmailVerified
     },
     config.server.tokenSecret,
@@ -70,7 +69,6 @@ const generateTokenAndAuthResponse = (user: User) => {
     phoneNumber: user.phoneNumber,
     isApproved: user.isApproved,
     accessToken: token,
-    isAdmin: user.isAdmin,
     isEmailVerified: user.isEmailVerified,
   };
   return response;

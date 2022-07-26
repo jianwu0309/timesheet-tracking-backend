@@ -30,13 +30,13 @@ export class AddTimesheetTable1657816516532 implements MigrationInterface {
                 {
                     name: 'clientTime',
                     type: 'character varying',
-                    isNullable: false,
+                    isNullable: true,
                     length: '100',
                 },
                 {
                     name: 'clientTimezone',
                     type: 'character varying',
-                    isNullable: false,
+                    isNullable: true,
                     length: '100',
                 },
                 {

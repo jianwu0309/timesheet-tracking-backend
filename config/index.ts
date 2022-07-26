@@ -64,12 +64,12 @@ const config = convict<IConfig>({
     passwordSalt: {
       format: String,
       env: 'HASH_SALT',
-      default: ''
+      default: 'timesheet@123'
     },
     tokenExpiry: {
       format: String,
       env: 'TOKEN_EXPIRY',
-      default: '1w'
+      default: '1d'
     },
     tokenSecret: {
       format: String,

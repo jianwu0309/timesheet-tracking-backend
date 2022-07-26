@@ -24,7 +24,6 @@ export interface IAuthResponse {
     phoneNumber: string;
     isApproved: boolean;
     accessToken: string;
-    isAdmin: boolean;
     isEmailVerified: boolean;
     accountId?: number;
     city?: any;

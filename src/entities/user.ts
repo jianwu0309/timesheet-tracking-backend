@@ -54,12 +54,6 @@ export class User extends AuditColumn {
 
   @Column({
     type: 'boolean',
-    default: false,
-  })
-  public isAdmin: boolean;
-
-  @Column({
-    type: 'boolean',
     default: true,
   })
   public isActive: boolean;
