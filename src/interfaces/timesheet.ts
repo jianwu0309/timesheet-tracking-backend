@@ -6,6 +6,7 @@ export interface ISaveRecord {
     clientTimezone: string;
     agencyTime: string;
     agencyTimezone: string;
+    agencyDate: string;
     country: string;
     date: string;
 }

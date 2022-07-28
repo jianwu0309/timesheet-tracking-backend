@@ -42,7 +42,7 @@ export const getRecordsForChart = async (countries: string[]) => {
 export const getRecordsForChartByDays = async (countries: string[]) => {
     return getRepository(Timesheet).query(`
         select
-            To_Char("timesheet"."date", 'Day') as "day",
+            To_Char("timesheet"."agencyDate", 'Day') as "day",
             count("timesheet"."agencyTime") as "count"
         from
             "timesheet" "timesheet"
@@ -50,10 +50,10 @@ export const getRecordsForChartByDays = async (countries: string[]) => {
             "timesheet"."isActive" = true
             ${countries.length ? `and "timesheet".country in (${countries.map((country) => `'${country}'`).join(',')})` : ''}
         group by
-            To_Char("timesheet"."date", 'Day'),
-            extract(dow from "date")
+            To_Char("timesheet"."agencyDate", 'Day'),
+            extract(dow from "agencyDate")
         order by 
-            extract(dow from "date");
+            extract(dow from "agencyDate");
     `);
 };
 
