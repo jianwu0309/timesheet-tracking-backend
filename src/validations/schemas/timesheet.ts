@@ -9,6 +9,7 @@ export const saveRecord: Joi.Schema = Joi.object({
     agencyTime: Joi.string().required(),
     agencyTimezone: Joi.number().required(),
     country: Joi.string().optional().allow(null),
+    date: Joi.date().optional()
 });
 
 export const deleteRecord: Joi.Schema = Joi.object({

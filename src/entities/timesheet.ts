@@ -49,6 +49,11 @@ export class Timesheet extends AuditColumn {
   public country: string;
 
   @Column({
+    type: 'date',
+  })
+  public date: string;
+
+  @Column({
     type: 'boolean',
     default: true,
   })
