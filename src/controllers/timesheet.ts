@@ -16,6 +16,12 @@ export const getRecordsForChart = async (ctx: Context, next: () => void) => {
     await next();
 };
 
+export const getRecordsForChartByDays = async (ctx: Context, next: () => void) => {
+    const countries: string[] = ctx.request.query.countries ? (ctx.request.query.countries as string).split(',') : [];
+    ctx.state.data = await timesheetService.getRecordsForChartByDays(countries);
+    await next();
+};
+
 export const saveRecord = async (ctx: Context, next: () => void) => {
     const payload = ctx.request.body;
     ctx.state.data = await timesheetService.saveRecord(payload);

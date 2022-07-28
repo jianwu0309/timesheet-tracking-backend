@@ -39,6 +39,24 @@ export const getRecordsForChart = async (countries: string[]) => {
     `);
 };
 
+export const getRecordsForChartByDays = async (countries: string[]) => {
+    return getRepository(Timesheet).query(`
+        select
+            To_Char("timesheet"."date", 'Day') as "day",
+            count("timesheet"."agencyTime") as "count"
+        from
+            "timesheet" "timesheet"
+        where
+            "timesheet"."isActive" = true
+            ${countries.length ? `and "timesheet".country in (${countries.map((country) => `'${country}'`).join(',')})` : ''}
+        group by
+            To_Char("timesheet"."date", 'Day'),
+            extract(dow from "date")
+        order by 
+            extract(dow from "date");
+    `);
+};
+
 export const saveRecord = async (payload: any) => {
     return getRepository(Timesheet).save(payload);
 };

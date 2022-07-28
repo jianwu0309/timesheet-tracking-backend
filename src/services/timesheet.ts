@@ -14,6 +14,11 @@ export const getRecordsForChart = async (countries: string[]) => {
     return stats;
 };
 
+export const getRecordsForChartByDays = async (countries: string[]) => {
+    const stats = await timesheetRepo.getRecordsForChartByDays(countries);
+    return stats;
+};
+
 export const saveRecord = async (payload: ISaveRecord) => {
     await validate(payload, joiSchema.saveRecord);
     if (payload.id) {
