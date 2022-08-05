@@ -22,6 +22,13 @@ export const getRecordsForChartByDays = async (ctx: Context, next: () => void) =
     await next();
 };
 
+export const getRecordsSlotsForChartByDays = async (ctx: Context, next: () => void) => {
+    const countries: string[] = ctx.request.query.countries ? (ctx.request.query.countries as string).split(',') : [];
+    const day: number = +(ctx.request.query.day || 0);
+    ctx.state.data = await timesheetService.getRecordsSlotsForChartByDays(countries, day);
+    await next();
+};
+
 export const saveRecord = async (ctx: Context, next: () => void) => {
     const payload = ctx.request.body;
     ctx.state.data = await timesheetService.saveRecord(payload);

@@ -15,6 +15,8 @@ router.get('/stats', ctrl.getRecordsForChart);
 
 router.get('/stats/days', ctrl.getRecordsForChartByDays);
 
+router.get('/stats/days-timeslot', ctrl.getRecordsSlotsForChartByDays);
+
 router.post('/', ctrl.saveRecord);
 
 router.delete('/:id', ctrl.deleteRecord);
